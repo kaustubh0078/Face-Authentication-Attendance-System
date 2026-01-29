@@ -128,7 +128,20 @@ def register_user():
     except ValueError as e:
         return jsonify({'error': str(e)}), 400
     except Exception as e:
-        return jsonify({'error': str(e)}), 500
+        print(f"Error registering user: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        
+        # Check permissions/path info for debugging
+        try:
+            print(f"Current working directory: {os.getcwd()}")
+            print(f"Target image path: {FACE_IMAGES_DIR}")
+            print(f"Directory exists: {os.path.exists(FACE_IMAGES_DIR)}")
+            print(f"Directory writable: {os.access(FACE_IMAGES_DIR, os.W_OK)}")
+        except:
+            pass
+            
+        return jsonify({'error': f"Server Error: {str(e)}"}), 500
 
 
 @app.route('/api/users/<int:user_id>', methods=['DELETE'])
