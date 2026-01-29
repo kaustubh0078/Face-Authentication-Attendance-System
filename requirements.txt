@@ -1,0 +1,25 @@
+# Face Authentication Attendance System - Dependencies
+
+# Core ML & Computer Vision
+opencv-python>=4.8.0
+deepface>=0.0.90
+tensorflow>=2.0.0
+
+# Image Processing
+numpy>=1.24.0
+Pillow>=10.0.0
+scipy>=1.11.0
+
+# Database
+# SQLite is built into Python
+
+# Web Framework
+flask>=3.0.0
+flask-cors>=4.0.0
+gunicorn>=21.0.0
+
+# Environment Variables
+python-dotenv>=1.0.0
+
+# Utilities
+python-dateutil>=2.8.0
